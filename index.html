@@ -5,38 +5,35 @@
   <meta charset="utf-8">
 
   <title>Kalkulator VAT</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <meta name="description" content="Kilka przydatnych kalkulatorów">
+  <meta name="author" content="Dawid Gawałkiewicz">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
-    <div>
-    <input id="a" type="number">
-    <input type="button" onclick="brutto()" value="oblicz brutto">
-    <input type="button" onclick="netto()" value="oblicz netto">    
-</div>
-<script>
-var a;
-    function setValues() { 
-    a = Number(document.getElementById("a").value);
-    }
-    function brutto() {
-        setValues();
-        result = (a * (23 / 100) + a);
-        score = result.toFixed(2);
-        alert("Brutto jest "+ score);
-    }
-    function netto() {
-        setValues();
-        result = (a-((23 / 100) * a));
-        var score = Math.round(result).toFixed(3);
-        alert("Netto jest "+score);
-    }
-</script>
+    <div class="site-background">
+        <div class="container">
+            <h1>Kalkulatory dla pracownika</h1>
+            <h2>Oblicz VAT 23% </h2>
+            <div class="first-vat-calc">
+                <h2>Podaj kwotę</h2><input id="vat-amount" type="number" style="vat-money-input"  pattern="[0-9]+([\.,][0-9]+)?" step="0.01" min="0">
+                <input type="button" onclick="brutto()" value="oblicz brutto">
+                <input type="button" onclick="netto()" value="oblicz netto">
+                <p>Wynik to:<span id="howmuch" style="color: white;padding-left: 0,5vw;"></span></p>
+            </div>                
+<p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a sem efficitur, volutpat dui in, placerat neque. Fusce non leo quis tortor gravida vehicula. Vestibulum id nunc augue. Phasellus placerat est sed scelerisque ornare. Vestibulum vitae sem nunc. Nulla finibus lectus vitae nisl sodales interdum. Praesent arcu nisi, mattis eu quam sed, tristique sollicitudin lorem. Donec semper erat augue, in faucibus ex molestie nec. Quisque sollicitudin, magna et tristique mollis, augue urna dapibus tellus, et laoreet elit nisi eu neque.
+        
+        Nam sollicitudin tincidunt sem sit amet rutrum. Proin sed hendrerit quam, ut hendrerit nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non magna pharetra, elementum sem non, dictum quam. Donec at leo at lacus scelerisque sollicitudin. Duis tempor leo at justo posuere feugiat.
+        
+        Vestibulum pulvinar rhoncus purus, eu congue enim fermentum efficitur. Proin feugiat laoreet tellus, in pharetra risus rhoncus et. Quisque vel lobortis lacus. Nunc lacinia ultrices neque, et laoreet dolor porta fringilla. Vestibulum sagittis porta velit sed gravida. Vivamus vitae fringilla nisl, at scelerisque magna. Donec ut rutrum orci. Phasellus vel sodales metus. Quisque tincidunt sed elit ac tempor. Maecenas pellentesque fermentum orci vitae sagittis. Phasellus convallis a neque eget bibendum.
+</p>
+            </div>
+    </div>
+<script src="assets/js/scripts.js"></script>
 </body>
 </html>
